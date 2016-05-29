@@ -2,9 +2,9 @@ package examples.jgl.application;
 
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class Checker extends GLU{
+public class Checker extends GLU {
 
 	public Checker(int w, int h) {
 		super(w,h);
@@ -61,7 +61,7 @@ public class Checker extends GLU{
 		myReshape(w, h);
 	}
 
-	public void draw(Graphic g){
+	public void draw(Graphics g) {
 		glClear (GL_COLOR_BUFFER_BIT);
 		glBegin (GL_QUADS);
 		glTexCoord2f (0.0f, 0.0f);

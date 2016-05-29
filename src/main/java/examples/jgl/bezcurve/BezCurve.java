@@ -2,7 +2,7 @@ package examples.jgl.bezcurve;
 
 import org.jgl.GL;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class BezCurve extends GL{
 
@@ -31,7 +31,7 @@ public class BezCurve extends GL{
 		myReshape (w, h);
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		int i;
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

@@ -5,9 +5,9 @@ import java.util.Date;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class Teapots extends GLAUX{
+public class Teapots extends GLAUX {
 	
 	public Teapots(int w, int h) {
 		super(w,h);
@@ -68,7 +68,7 @@ public class Teapots extends GLAUX{
 	 *  4th column:  black, cyan, green, red, white, yellow rubber
 	 */
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		Date startTime = new Date ();
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

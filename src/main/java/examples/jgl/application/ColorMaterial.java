@@ -4,9 +4,9 @@ import org.jgl.GLAUX;
 
 import br.com.etyllica.core.event.MouseButton;
 import br.com.etyllica.core.event.PointerEvent;
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class ColorMaterial extends GLAUX{
+public class ColorMaterial extends GLAUX {
 
 	public ColorMaterial(int w, int h) {
 		super(w,h);
@@ -58,7 +58,7 @@ public class ColorMaterial extends GLAUX{
 		glColor4fv(diffuseMaterial);
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		auxSolidSphere(1.0);
 		glFlush(g);

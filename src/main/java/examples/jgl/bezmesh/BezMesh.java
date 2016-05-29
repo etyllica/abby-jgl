@@ -2,7 +2,7 @@ package examples.jgl.bezmesh;
 
 import org.jgl.GL;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class BezMesh extends GL{
 
@@ -87,7 +87,7 @@ public class BezMesh extends GL{
 		myReshape(w, h);
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glPushMatrix();
 		glRotatef(85.0f, 1.0f, 1.0f, 1.0f);

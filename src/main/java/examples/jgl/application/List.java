@@ -3,7 +3,7 @@ package examples.jgl.application;
 
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class List extends GLU {
 
@@ -26,7 +26,7 @@ public class List extends GLU {
 		glEnd();
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		int i;
 		
 		glLoadIdentity();

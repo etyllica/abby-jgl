@@ -2,9 +2,9 @@ package examples.jgl.application;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class Tea extends GLAUX{
+public class Tea extends GLAUX {
 
 	public Tea(int w, int h) {
 		super(w,h);
@@ -41,7 +41,7 @@ public class Tea extends GLAUX{
 	}
 
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		
 		double eqn[] = { 1.0, 0.0, -1.0, 1.0 };
 		

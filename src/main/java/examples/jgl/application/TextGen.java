@@ -2,9 +2,9 @@ package examples.jgl.application;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class TextGen extends GLAUX{
+public class TextGen extends GLAUX {
 	
 	public TextGen(int w, int h) {
 		super(w,h);
@@ -65,7 +65,7 @@ public class TextGen extends GLAUX{
 	}
 
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		glPushMatrix();

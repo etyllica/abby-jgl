@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GL;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Stroke extends GL {
 	
@@ -109,7 +109,7 @@ public class Stroke extends GL {
 		glCallLists(len, GL_BYTE, s.getBytes());
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT);
 		glColor3f(1.0f, 1.0f, 1.0f);
 		glPushMatrix();

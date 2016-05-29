@@ -3,7 +3,7 @@ package examples.jgl.application;
 
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class MipMap extends GLU{
 	
@@ -12,7 +12,7 @@ public class MipMap extends GLU{
 	}
 
 	@Override
-	public void load(){
+	public void load() {
 		myinit();
 		loading = 100;
 	}
@@ -100,7 +100,7 @@ public class MipMap extends GLU{
 		myReshape(w, h);
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glBegin(GL_QUADS);
 		glTexCoord2f(0.0f, 0.0f);

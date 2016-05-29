@@ -3,7 +3,7 @@ package examples.jgl.application;
 import org.jgl.GLAUX;
 
 import br.com.etyllica.core.event.KeyEvent;
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Robot extends GLAUX{
 
@@ -55,7 +55,7 @@ public class Robot extends GLAUX{
 	}
 
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT);
 		glColor3f(1.0f, 1.0f, 1.0f);
 		glPushMatrix();

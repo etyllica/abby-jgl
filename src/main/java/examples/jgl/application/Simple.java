@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GL;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Simple extends GL{
 
@@ -16,7 +16,7 @@ public class Simple extends GL{
 	}
 
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT);

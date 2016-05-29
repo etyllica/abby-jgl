@@ -16,10 +16,9 @@ import com.badlogic.gdx.math.Vector3;
 import br.com.abby.GLDrawable;
 import br.com.abby.awt.material.Texture;
 import br.com.abby.core.loader.MeshLoader;
-import br.com.abby.core.vbo.Face;
-import br.com.abby.core.vbo.Group;
-import br.com.abby.core.vbo.VBO;
-import br.com.abby.linear.AimPoint;
+import br.com.abby.core.model.Face;
+import br.com.abby.core.model.Group;
+import br.com.abby.core.model.Model;
 import br.com.etyllica.loader.image.ImageLoader;
 
 /**
@@ -31,7 +30,7 @@ import br.com.etyllica.loader.image.ImageLoader;
 
 public class Model3D extends AimPoint implements GLDrawable {
 
-	private VBO vbo;
+	private Model model;
 
 	private double scale = 1;
 
@@ -49,7 +48,7 @@ public class Model3D extends AimPoint implements GLDrawable {
 	public Model3D(String path) {
 		super(0,0,0);
 
-		this.vbo = MeshLoader.getInstance().loadModel(path);		
+		this.model = MeshLoader.getInstance().loadModel(path);		
 	}
 
 	@Override
@@ -84,7 +83,7 @@ public class Model3D extends AimPoint implements GLDrawable {
 			return;
 		}
 
-		for(Group group: vbo.getGroups()) {
+		for(Group group: model.getGroups()) {
 
 			String map = group.getMaterial().getMapD();
 			//map = "";
@@ -137,16 +136,16 @@ public class Model3D extends AimPoint implements GLDrawable {
 				for(int i=0;i<face.vertexIndex.length;i++) {
 
 					if(drawTexture) {
-						Vector3 normal = vbo.getNormals().get(face.normalIndex[i]);
+						Vector3 normal = model.getNormals().get(face.normalIndex[i]);
 						gl.glNormal3d(normal.x, normal.y, normal.z);
 
-						Vector2 textureCoordinate = vbo.getTextures().get(face.textureIndex[i]);
+						Vector2 textureCoordinate = model.getTextures().get(face.textureIndex[i]);
 						gl.glTexCoord2d(textureCoordinate.x, textureCoordinate.y);
 					}
 
 					int index = face.vertexIndex[i];
 
-					Vector3 vertex = vbo.getVertices().get(index);
+					Vector3 vertex = model.getVertices().get(index);
 
 					gl.glVertex3d(vertex.x, vertex.y, vertex.z);
 				}
@@ -175,7 +174,7 @@ public class Model3D extends AimPoint implements GLDrawable {
 
 		double vsize = 0.015;
 
-		List<Vector3> vertices = vbo.getVertices();
+		List<Vector3> vertices = model.getVertices();
 
 		for(int i=0;i<vertices.size(); i++) {
 
@@ -265,12 +264,12 @@ public class Model3D extends AimPoint implements GLDrawable {
 		this.scale = scale;
 	}
 
-	public VBO getVbo() {
-		return vbo;
+	public Model getModel() {
+		return model;
 	}
 
-	public void setVbo(VBO vbo) {
-		this.vbo = vbo;
+	public void setModel(Model model) {
+		this.model = model;
 	}
 
 }

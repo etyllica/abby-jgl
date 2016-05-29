@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GL;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class BezSurf extends GL {
 
@@ -48,7 +48,7 @@ public class BezSurf extends GL {
 		myReshape (w, h);
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		int i, j;
 
 		glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

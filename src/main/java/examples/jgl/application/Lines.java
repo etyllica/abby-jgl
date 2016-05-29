@@ -3,7 +3,7 @@ package examples.jgl.application;
 import org.jgl.GL;
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Lines extends GLU {
 
@@ -24,7 +24,7 @@ public class Lines extends GLU {
 		glEnd();
 	}
 
-	public void draw(Graphic g){
+	public void draw(Graphics g) {
 		int i;
 
 		glClear(GL_COLOR_BUFFER_BIT);

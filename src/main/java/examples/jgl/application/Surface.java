@@ -3,7 +3,7 @@ package examples.jgl.application;
 import org.jgl.GLU;
 import org.jgl.glu.GLUnurbsObj;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Surface extends GLU{
 	
@@ -58,7 +58,7 @@ public class Surface extends GLU{
 		loading = 100;
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		float knots [] = { 0.0f, 0.0f, 0.0f, 0.0f,
 				1.0f, 1.0f, 1.0f, 1.0f };
 

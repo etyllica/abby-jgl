@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class TextureSurf extends GLU{
 
@@ -91,7 +91,7 @@ public class TextureSurf extends GLU{
 	}
 
 	@Override
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 
 		glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glColor3f (1.0f, 1.0f, 1.0f);

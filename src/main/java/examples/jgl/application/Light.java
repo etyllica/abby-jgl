@@ -2,9 +2,9 @@ package examples.jgl.application;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class Light extends GLAUX{
+public class Light extends GLAUX {
 
 	public Light(int w, int h) {
 		super(w,h);
@@ -33,7 +33,7 @@ public class Light extends GLAUX{
 
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		auxSolidSphere(1.0);
 		glFlush(g);

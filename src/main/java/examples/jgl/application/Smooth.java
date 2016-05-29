@@ -3,9 +3,9 @@ package examples.jgl.application;
 
 import org.jgl.GLU;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
-public class Smooth extends GLU{
+public class Smooth extends GLU {
 	
 	public Smooth(int w, int h) {
 		super(w,h);
@@ -35,7 +35,7 @@ public class Smooth extends GLU{
 		glEnd();
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		triangle();

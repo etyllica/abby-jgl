@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.graphics.Graphic;
+import br.com.etyllica.core.graphics.Graphics;
 
 public class Clip extends GLAUX {
 
@@ -15,7 +15,7 @@ public class Clip extends GLAUX {
 		loading = 100;
 	}
 
-	public void draw(Graphic g) {
+	public void draw(Graphics g) {
 		double eqn [] = {0.0, 1.0, 0.0, 0.0};	/* y < 0 */
 		double eqn2 [] = {1.0, 0.0, 0.0, 0.0};	/* x < 0 */
 
