@@ -8,7 +8,8 @@ import br.com.abby.core.light.Lamp;
 import br.com.abby.linear.Box3D;
 import br.com.abby.linear.Camera;
 import br.com.abby.linear.Polygon3D;
-import br.com.etyllica.core.linear.Point3D;
+
+import com.badlogic.gdx.math.Vector3;
 
 /**
  * 
@@ -76,9 +77,9 @@ public abstract class Application3D extends GLAUX {
 	}
 
 	protected void lookatCamera(Camera cam){
-		Point3D target = cam.getTarget();
+		Vector3 target = cam.getTarget();
 
-		gluLookAt(cam.getX(), cam.getY(), cam.getZ(),target.getX(),target.getY(),target.getZ(),0,0,1);
+		gluLookAt(cam.getX(), cam.getY(), cam.getZ(), target.x, target.y, target.z,0,0,1);
 	}
 
 	//Texture routines
