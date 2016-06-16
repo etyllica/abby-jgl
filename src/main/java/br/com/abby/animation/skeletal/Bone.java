@@ -153,25 +153,38 @@ public class Bone implements GLDrawable {
 		end.rotateXOver(angle,px,py,pz);
 
 	}
+	
+	public void setRotationX(double angle) {
+		rotateX(-angleX);
+		rotateX(angle);
+		this.angleX = angle;
+	}
 
 	public void rotateY(double angle, double px, double py, double pz) {
 
 		this.angleY += angle;
 
 		rotateOver(angle, px, py, pz, AimPoint.rotationMatrixY(angle, px, py, pz));
-
 		end.rotateYOver(angle,px,py,pz);
-
+	}
+	
+	public void setRotationY(double angle) {
+		rotateY(-angleY);
+		rotateY(angle);
+		this.angleY = angle;
 	}
 
 	public void rotateZ(double angle, double px, double py, double pz) {
-
 		this.angleZ += angle;
-
+		
 		rotateOver(angle, px, py, pz, AimPoint.rotationMatrixZ(angle, px, py, pz));
-
 		end.rotateZOver(angle,px,py,pz);
-
+	}
+	
+	public void setRotationZ(double angle) {
+		rotateZ(-angleZ);
+		rotateZ(angle);
+		this.angleZ = angle;
 	}
 
 	private void rotateOver(double angle, double px, double py, double pz, double m[][]) {
