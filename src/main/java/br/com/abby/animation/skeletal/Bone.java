@@ -105,7 +105,6 @@ public class Bone implements GLDrawable {
 		}
 		
 		rotateX(angle, px, py, pz);
-		
 	}
 
 	public void rotateY(double angle) {
@@ -145,13 +144,17 @@ public class Bone implements GLDrawable {
 	}
 
 	public void rotateX(double angle, double px, double py, double pz) {
-
+		rotateXOnly(angle, px, py, pz);
+		rotateXChildren(angle, px, py, pz);
+	}
+	
+	public void rotateXOnly(double angle, double px, double py, double pz) {
 		this.angleX += angle;
-
 		rotateOver(angle, px, py, pz, AimPoint.rotationMatrixX(angle, px, py, pz));
-
+	}
+	
+	private void rotateXChildren(double angle, double px, double py, double pz) {
 		end.rotateXOver(angle,px,py,pz);
-
 	}
 	
 	public void setRotationX(double angle) {
@@ -161,10 +164,16 @@ public class Bone implements GLDrawable {
 	}
 
 	public void rotateY(double angle, double px, double py, double pz) {
-
+		rotateYOnly(angle, px, py, pz);
+		rotateYChildren(angle, px, py, pz);
+	}
+	
+	public void rotateYOnly(double angle, double px, double py, double pz) {
 		this.angleY += angle;
-
 		rotateOver(angle, px, py, pz, AimPoint.rotationMatrixY(angle, px, py, pz));
+	}
+	
+	private void rotateYChildren(double angle, double px, double py, double pz) {
 		end.rotateYOver(angle,px,py,pz);
 	}
 	
@@ -173,11 +182,18 @@ public class Bone implements GLDrawable {
 		rotateY(angle);
 		this.angleY = angle;
 	}
-
+	
 	public void rotateZ(double angle, double px, double py, double pz) {
+		rotateZOnly(angle, px, py, pz);
+		rotateZChildren(angle, px, py, pz);
+	}
+	
+	public void rotateZOnly(double angle, double px, double py, double pz) {
 		this.angleZ += angle;
-		
 		rotateOver(angle, px, py, pz, AimPoint.rotationMatrixZ(angle, px, py, pz));
+	}
+	
+	private void rotateZChildren(double angle, double px, double py, double pz) {
 		end.rotateZOver(angle,px,py,pz);
 	}
 	
