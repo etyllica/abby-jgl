@@ -2,16 +2,11 @@ package br.com.abby.linear;
 
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.jgl.GL;
 import org.jgl.GLAUX;
-
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 
 import br.com.abby.GLDrawable;
 import br.com.abby.awt.material.Texture;
@@ -20,6 +15,9 @@ import br.com.abby.core.model.Face;
 import br.com.abby.core.model.Group;
 import br.com.abby.core.model.Model;
 import br.com.etyllica.loader.image.ImageLoader;
+
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 
 /**
  * 
@@ -33,8 +31,6 @@ public class Model3D extends AimPoint implements GLDrawable {
 	private Model model;
 
 	private double scale = 1;
-
-	private Set<Integer> vertexSelection = new HashSet<Integer>();
 
 	private boolean drawTexture = true;
 	private boolean drawFaces = true;
@@ -176,17 +172,11 @@ public class Model3D extends AimPoint implements GLDrawable {
 
 		List<Vector3> vertices = model.getVertices();
 
+		gl.glColor3i(0x66,0x44,0x44);
+		
 		for(int i=0;i<vertices.size(); i++) {
 
-			if(vertexSelection.contains(i)) {
-				gl.glColor3i(0xff,0xff,0xff);
-			}else{
-				//gl.glColor3i(0xdd,0x88,0x55);
-				gl.glColor3i(0x66,0x44,0x44);
-			}
-
-			//TODO Remove
-			if(i==specialVertex) {
+			if(i == specialVertex) {
 				gl.glColor3i(0xff,0xff,0x00);
 				vsize*=2;
 			}
@@ -196,7 +186,6 @@ public class Model3D extends AimPoint implements GLDrawable {
 			gl.auxSolidCube(vsize);
 			gl.glPopMatrix();
 		}
-
 	}
 
 	protected void setTexture(GL gl, Texture texture) {
@@ -224,14 +213,14 @@ public class Model3D extends AimPoint implements GLDrawable {
 
 	}
 
-	public Set<Integer> getVertexSelection() {
+	/*public Set<Integer> getVertexSelection() {
 		return vertexSelection;
 	}
 
 	public void setVertexSelection(Set<Integer> vertexSelection) {
 		this.vertexSelection = vertexSelection;
 	}
-
+*/
 	public boolean isDrawTexture() {
 		return drawTexture;
 	}
