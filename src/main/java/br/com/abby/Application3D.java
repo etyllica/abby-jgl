@@ -29,7 +29,7 @@ public abstract class Application3D extends GLAUX {
 		glPushMatrix();
 		glLoadIdentity();
 		glColor3d(polygon.getColor().getRed()/0xff,polygon.getColor().getGreen()/0xff,polygon.getColor().getBlue()/0xff);
-		glTranslated(polygon.getX(), polygon.getY(), polygon.getZ());
+		glTranslated(polygon.x, polygon.y, polygon.z);
 
 		//Consertar!
 		glRotated(polygon.getAngleX(), 1,0,0);
@@ -56,7 +56,7 @@ public abstract class Application3D extends GLAUX {
 		glPushMatrix();
 		//glLoadIdentity();
 		glColor3d(box.getColor().getRed()/0xff,box.getColor().getGreen()/0xff,box.getColor().getBlue()/0xff);
-		glTranslated(box.getX(), box.getY(), box.getZ());
+		glTranslated(box.x, box.y, box.z);
 		glRotated(box.getAngleZ(), 0.0, 0.0, 1.0);
 		glRotated(box.getAngleY(), 0.0, 1.0, 0.0);
 		auxSolidBox(box.getAltura(), box.getLargura(), box.getProfundidade());
@@ -65,7 +65,7 @@ public abstract class Application3D extends GLAUX {
 
 	protected void setLamp(Lamp lamp){
 
-		float light_position[] = {(float)lamp.getX(),(float)lamp.getY(), (float)lamp.getZ(), 0};
+		float light_position[] = {lamp.x, lamp.y, lamp.z, 0};
 
 		glLightfv (GL_LIGHT0, GL_POSITION, light_position);
 

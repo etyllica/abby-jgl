@@ -1,6 +1,7 @@
 package br.com.abby.linear;
 
 
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,7 @@ import com.badlogic.gdx.math.Vector3;
 
 public class Model3D extends AimPoint implements GLDrawable {
 
+	private Color color = Color.BLACK; 
 	private Model model;
 
 	private double scale = 1;
