@@ -1,5 +1,7 @@
 package br.com.abby;
 
+import java.awt.Color;
+
 import org.jgl.GL;
 import org.jgl.GLAUX;
 
@@ -24,11 +26,16 @@ public abstract class Application3D extends GLAUX {
 		super(w,h);
 	}
 
+	Vector3 color = new Vector3();
+	
+	protected void setColot(Color color) {
+		this.color.set(color.getRed()/255f, color.getGreen()/255f, color.getBlue()/255f);
+	}
+	
 	protected void desenhaPoligono(Polygon3D polygon) {
-		
 		glPushMatrix();
 		glLoadIdentity();
-		glColor3d(polygon.getColor().getRed()/0xff,polygon.getColor().getGreen()/0xff,polygon.getColor().getBlue()/0xff);
+		glColor3f(color.x, color.y, color.z);
 		glTranslated(polygon.x, polygon.y, polygon.z);
 
 		//Consertar!
@@ -38,24 +45,23 @@ public abstract class Application3D extends GLAUX {
 
 		glBegin(GL_QUADS);
 
-		double x,y,z;
+		float x,y,z;
 
-		for(int i=0;i<polygon.getVertices().size();i++){
-			x = polygon.getVertices().get(i).getX();
-			y = polygon.getVertices().get(i).getY();
-			z = polygon.getVertices().get(i).getZ();
-			glVertex3d(x,y,z);
+		for(int i=0;i<polygon.getVertices().size();i++) {
+			x = polygon.getVertices().get(i).x;
+			y = polygon.getVertices().get(i).y;
+			z = polygon.getVertices().get(i).z;
+			glVertex3f(x,y,z);
 		}
 		glEnd();
 
 		glPopMatrix();
 	}
 
-
-	protected void desenhaCaixa(Box3D box){
+	protected void desenhaCaixa(Box3D box) {
 		glPushMatrix();
 		//glLoadIdentity();
-		glColor3d(box.getColor().getRed()/0xff,box.getColor().getGreen()/0xff,box.getColor().getBlue()/0xff);
+		glColor3f(color.x, color.y, color.z);
 		glTranslated(box.x, box.y, box.z);
 		glRotated(box.getAngleZ(), 0.0, 0.0, 1.0);
 		glRotated(box.getAngleY(), 0.0, 1.0, 0.0);
@@ -63,8 +69,7 @@ public abstract class Application3D extends GLAUX {
 		glPopMatrix();
 	}
 
-	protected void setLamp(Lamp lamp){
-
+	protected void setLamp(Lamp lamp) {
 		float light_position[] = {lamp.x, lamp.y, lamp.z, 0};
 
 		glLightfv (GL_LIGHT0, GL_POSITION, light_position);
@@ -76,14 +81,14 @@ public abstract class Application3D extends GLAUX {
 		glEnable (GL_COLOR_MATERIAL);
 	}
 
-	protected void lookatCamera(Camera cam){
+	protected void lookatCamera(Camera cam) {
 		Vector3 target = cam.getTarget();
 
 		gluLookAt(cam.getX(), cam.getY(), cam.getZ(), target.x, target.y, target.z,0,0,1);
 	}
 
 	//Texture routines
-	protected void enableTextureDefault(){
+	protected void enableTextureDefault() {
 
 		glShadeModel (GL_FLAT);
 		
@@ -101,15 +106,14 @@ public abstract class Application3D extends GLAUX {
 		glEnable (GL.GL_TEXTURE_2D);
 		
 		glEnable (GL.GL_CULL_FACE);
-		glCullFace (GL.GL_BACK);		
-		
+		glCullFace (GL.GL_BACK);
 	}
 
-	protected void enableTextureNoRepeat(){
+	protected void enableTextureNoRepeat() {
 
 	}
 
-	protected void setTexture(Texture texture){
+	protected void setTexture(Texture texture) {
 		
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, (int)texture.getW(), (int)texture.getH(), 0,
 				GL_RGB, GL_UNSIGNED_BYTE, texture.getBytes());
@@ -121,8 +125,7 @@ public abstract class Application3D extends GLAUX {
 		//glTexGeniv(GL_S, GL_OBJECT_PLANE, sgenIparams);
 
 	}
-	protected void setAlphaTexture(Texture texture){
-		
+	protected void setAlphaTexture(Texture texture) {
 				
 		//glEnable(GL_ALPHA_TEST);
 		
