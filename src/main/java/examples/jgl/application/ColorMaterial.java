@@ -2,7 +2,7 @@ package examples.jgl.application;
 
 import org.jgl.GLAUX;
 
-import br.com.etyllica.core.event.MouseButton;
+import br.com.etyllica.core.event.MouseEvent;
 import br.com.etyllica.core.event.PointerEvent;
 import br.com.etyllica.core.graphics.Graphics;
 
@@ -92,15 +92,15 @@ public class ColorMaterial extends GLAUX {
 	@Override
 	public void updateMouse(PointerEvent event) {
 
-		if(event.isButtonUp(MouseButton.MOUSE_BUTTON_LEFT)) {
+		if(event.isButtonUp(MouseEvent.MOUSE_BUTTON_LEFT)) {
 			changeRedDiffuse();
 		}
 		
-		if(event.isButtonUp(MouseButton.MOUSE_BUTTON_MIDDLE)) {
+		if(event.isButtonUp(MouseEvent.MOUSE_BUTTON_MIDDLE)) {
 			changeBlueDiffuse();
 		}
 		
-		if(event.isButtonUp(MouseButton.MOUSE_BUTTON_RIGHT)) {
+		if(event.isButtonUp(MouseEvent.MOUSE_BUTTON_RIGHT)) {
 			changeGreenDiffuse();
 		}
 	}
