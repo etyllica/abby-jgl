@@ -129,9 +129,9 @@ public class Teapots extends GLAUX {
 
 		g.setColor(Color.WHITE);
 		
-		g.drawString(30,20, "FPS : " + this.fps);
+		g.drawString("FPS : " + this.fps, 30, 20);
 		
-		g.drawString(300,20, "Run Time : " + (endTime.getTime () - startTime.getTime ()) + " ms");
+		g.drawString("Run Time : " + (endTime.getTime () - startTime.getTime ()) + " ms", 300, 20);
 		
 	}
 
